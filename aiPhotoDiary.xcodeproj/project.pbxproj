@@ -14,6 +14,7 @@
 		A4D5E9422C16C5B4006410AE /* TutorialPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D5E9412C16C5B4006410AE /* TutorialPage.swift */; };
 		A4D5E9442C16CC40006410AE /* SlidingTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D5E9432C16CC40006410AE /* SlidingTutorialView.swift */; };
 		A4D5E9462C16CC57006410AE /* DiaryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D5E9452C16CC57006410AE /* DiaryListView.swift */; };
+		A4D5E9482C16CECA006410AE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D5E9472C16CECA006410AE /* AppState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		A4D5E9412C16C5B4006410AE /* TutorialPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPage.swift; sourceTree = "<group>"; };
 		A4D5E9432C16CC40006410AE /* SlidingTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingTutorialView.swift; sourceTree = "<group>"; };
 		A4D5E9452C16CC57006410AE /* DiaryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryListView.swift; sourceTree = "<group>"; };
+		A4D5E9472C16CECA006410AE /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				A4D5E93F2C16C57B006410AE /* NetworkManager.swift */,
+				A4D5E9472C16CECA006410AE /* AppState.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				A4D5E9402C16C57B006410AE /* NetworkManager.swift in Sources */,
 				A4D5E9422C16C5B4006410AE /* TutorialPage.swift in Sources */,
 				A4D5E9442C16CC40006410AE /* SlidingTutorialView.swift in Sources */,
+				A4D5E9482C16CECA006410AE /* AppState.swift in Sources */,
 				A4D5E9462C16CC57006410AE /* DiaryListView.swift in Sources */,
 				A4D5E92A2C16C3C8006410AE /* aiPhotoDiaryApp.swift in Sources */,
 			);

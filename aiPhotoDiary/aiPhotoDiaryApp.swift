@@ -7,22 +7,14 @@
 
 import SwiftUI
 
-let isFirstLaunchKey = "isFirstLaunch"
-
-func isFirstLaunch() -> Bool {
-    let defaults = UserDefaults.standard
-    if defaults.bool(forKey: isFirstLaunchKey) == false {
-        defaults.set(true, forKey: isFirstLaunchKey)
-        return true
-    }
-    return false
-}
-
 @main
 struct aiPhotoDiaryApp: App {
+    
+    @StateObject private var appState = AppState.shared
+    
     var body: some Scene {
         WindowGroup {
-            if isFirstLaunch() {
+            if appState.isFirstLaunch {
                 SlidingTutorialView()
             } else {
                 DiaryListView()
