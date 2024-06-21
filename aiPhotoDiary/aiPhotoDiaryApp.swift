@@ -10,7 +10,6 @@ import SwiftUI
 @main
 struct aiPhotoDiaryApp: App {
     
-    @StateObject private var appState = AppState.shared
     @State private var showTutorial : Bool
     
     init() {
@@ -23,11 +22,14 @@ struct aiPhotoDiaryApp: App {
     var body: some Scene {
         WindowGroup {
             DiaryListView()
-                .environmentObject(appState)
                 .fullScreenCover(isPresented: $showTutorial) {
                     // Show tutorial if first time launch. 
                     SlidingTutorialView()
                 }
         }
     }
+
 }
+
+
+
