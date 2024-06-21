@@ -12,18 +12,16 @@ struct aiPhotoDiaryApp: App {
     
     @State private var showTutorial : Bool
     
+    /// Initialize the @State variable showTutorial to only present SlidingTutorialView on the inital launch after installing.
     init() {
-        var initialShowTutorial: Bool = false
-        initialShowTutorial = AppState.shared.isFirstLaunch
-        
-        _showTutorial = State(initialValue: initialShowTutorial)
+        _showTutorial = State(initialValue: UserDefaultsManager.shared.isFirstLaunched)
     }
     
     var body: some Scene {
         WindowGroup {
             DiaryListView()
                 .fullScreenCover(isPresented: $showTutorial) {
-                    // Show tutorial if first time launch. 
+                    /// Only show tutorial on launching for the first time.
                     SlidingTutorialView()
                 }
         }

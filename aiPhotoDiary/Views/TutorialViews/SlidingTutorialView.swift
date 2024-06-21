@@ -10,14 +10,15 @@ import SwiftUI
 struct SlidingTutorialView: View {
     
     @State private var currentSelection = 0
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         VStack {
             HStack {
                 Spacer()
                 Button(action: {
-                    presentationMode.wrappedValue.dismiss()
+                    UserDefaultsManager.shared.isFirstLaunched = false
+                    dismiss()
                 }) {
                     Text("SKIP")
                         .padding(.trailing, 15)
@@ -41,8 +42,9 @@ struct SlidingTutorialView: View {
                 if currentSelection < tutorialPageInfos.count - 1 {
                     currentSelection += 1
                 } else {
-                    // Go to first page
-                    presentationMode.wrappedValue.dismiss()
+                    // Close tutorial and set isFirstLaunched to false
+                    UserDefaultsManager.shared.isFirstLaunched = false
+                    dismiss()
                 }
             }) {
                 Text(currentSelection < tutorialPageInfos.count - 1 ? "Next" : "Star Your Journey")
@@ -58,7 +60,6 @@ struct SlidingTutorialView: View {
             .cornerRadius(10)
             
         }// eof VStack
-        
     } // eof body
 }
 
