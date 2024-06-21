@@ -11,14 +11,23 @@ import SwiftUI
 struct aiPhotoDiaryApp: App {
     
     @StateObject private var appState = AppState.shared
+    @State private var showTutorial : Bool
+    
+    init() {
+        var initialShowTutorial: Bool = false
+        initialShowTutorial = AppState.shared.isFirstLaunch
+        
+        _showTutorial = State(initialValue: initialShowTutorial)
+    }
     
     var body: some Scene {
         WindowGroup {
-            if appState.isFirstLaunch {
-                SlidingTutorialView()
-            } else {
-                DiaryListView()
-            }
+            DiaryListView()
+                .environmentObject(appState)
+                .fullScreenCover(isPresented: $showTutorial) {
+                    // Show tutorial if first time launch. 
+                    SlidingTutorialView()
+                }
         }
     }
 }
